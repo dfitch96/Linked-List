@@ -1,7 +1,5 @@
 # Linked-List
-
-This project implements a basic linked list in JavaScript. A linked list is a collection of nodes, where each node stores a value and a reference to the next node. Linked lists are fundamental for understanding more complex data structures.
-
+This project implements a basic singly linked list in JavaScript
 Features:
 - append(value): Adds a node to the end.
 - prepend(value): Adds a node to the start.
