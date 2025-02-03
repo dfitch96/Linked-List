@@ -1,20 +1,11 @@
 
 
+
 class Node {
     constructor(value=null, nextNode=null){
-        this._value = value;
+        this.value = value;
         this.next = nextNode;
-    }
-
-    get value() {
-        return this._value;
-    }
-
-    set value(val){
-        this._value = val;
-    }
-
-    
+    }  
 }
 
 
@@ -132,8 +123,8 @@ class LinkedList {
 
     insertAt(value, index){
 
-        if(index >= this.length){
-            return
+        if(index >= this.length || index < 0){
+            return;
         }
 
         this.length++;
@@ -141,7 +132,7 @@ class LinkedList {
         let cur = this.#head.next;
         let prev = this.#head;
         let i = 0;
-        while (i != index){
+        while (i !== index){
             prev = cur;
             cur = cur.next;
             i++;
@@ -149,6 +140,27 @@ class LinkedList {
 
         prev.next = newNode;
         newNode.next = cur;
+
+    }
+
+    removeAt(index){
+
+        if(index >= this.length || index < 0){
+            return;
+        }
+
+        this.length--;
+        
+        let cur = this.#head.next;
+        let prev = this.#head;
+        let i = 0;
+        while (i !== index){
+            prev = cur;
+            cur = cur.next;
+            i++;
+        }
+
+        prev.next = cur.next;
 
     }
 
@@ -170,11 +182,9 @@ class LinkedList {
 
 
 
-let list = new LinkedList();
-list.append(new Node(5));
-list.append(new Node(12));
-list.append(new Node(1));
-list.prepend(new Node(-5));
-list.prepend(new Node(1233));
+module.exports = {
+    Node,
+    LinkedList
+};
 
 
