@@ -1,5 +1,5 @@
 # Linked-List
-This project implements a basic singly linked list in JavaScript
+This project implements a singly linked list in JavaScript
 Features:
 - append(value): Adds a node to the end.
 - prepend(value): Adds a node to the start.
